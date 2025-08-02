@@ -1,0 +1,59 @@
+{
+  "name": "@tamyla/campaign-engine",
+  "version": "1.0.0",
+  "description": "Multi-channel campaign orchestration engine for African trading network",
+  "main": "src/index.js",
+  "type": "module",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "build": "echo 'Build complete - Node.js app ready'",
+    "test": "jest --detectOpenHandles",
+    "test:ci": "jest --ci --coverage --detectOpenHandles",
+    "lint": "eslint src --ext .js",
+    "lint:fix": "eslint src --ext .js --fix",
+    "health-check": "curl -f http://localhost:$PORT/health || exit 1",
+    "railway:deploy": "echo 'Deploying to Railway via GitHub'",
+    "migrate": "node scripts/migrate.js",
+    "postinstall": "echo 'Dependencies installed successfully'"
+  },
+  "keywords": [
+    "campaign-engine",
+    "multi-channel",
+    "email-marketing", 
+    "sms-marketing",
+    "whatsapp-campaigns",
+    "african-trade",
+    "user-acquisition"
+  ],
+  "author": "Tamyla",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.0",
+    "cors": "^2.8.5",
+    "helmet": "^7.0.0",
+    "bull": "^4.11.0",
+    "redis": "^4.6.0",
+    "node-cron": "^3.0.0",
+    "axios": "^1.5.0",
+    "date-fns": "^2.30.0",
+    "mustache": "^4.2.0",
+    "zod": "^3.21.0",
+    "dotenv": "^16.3.0",
+    "jsonwebtoken": "^9.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0",
+    "eslint": "^8.0.0",
+    "jest": "^29.0.0"
+  },
+  "files": [
+    "src",
+    "README.md",
+    "DEPLOYMENT.md"
+  ]
+}
