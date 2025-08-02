@@ -9,8 +9,8 @@
     "npm": ">=8.0.0"
   },
   "scripts": {
-    "start": "node src/server.js",
-    "dev": "nodemon src/server.js",
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
     "build": "echo 'Build complete - Node.js app ready'",
     "test": "jest --detectOpenHandles",
     "test:ci": "jest --ci --coverage --detectOpenHandles",
