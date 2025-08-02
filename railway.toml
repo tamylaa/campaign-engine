@@ -1,11 +1,11 @@
-# Railway Configuration for Monorepo
-# This file tells Railway how to deploy campaign-engine from monorepo
+# Railway Configuration for Campaign Engine
+# Standalone repository configuration
 
 [build]
-command = "cd campaign-engine && npm ci && npm run build"
+command = "npm ci && npm run build"
 
 [deploy]
-startCommand = "cd campaign-engine && npm run migrate && npm start"
+startCommand = "npm run migrate && npm start"
 healthcheckPath = "/health"
 healthcheckTimeout = 300
 restartPolicyType = "on_failure"
@@ -14,8 +14,3 @@ restartPolicyMaxRetries = 3
 [env]
 NODE_ENV = "production"
 PORT = "${{ PORT }}"
-
-# Monorepo configuration
-[build.watch]
-include = ["campaign-engine/**"]
-ignore = ["campaign-engine/node_modules/**", "campaign-engine/.git/**"]
